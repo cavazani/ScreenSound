@@ -58,8 +58,7 @@ void ExibirOpcoesDoMenu()
             break;
         case 3: AvaliarUmaBanda();
             break;
-        case 4:
-            Console.WriteLine("Você digitou a opção " + opcaoEscolhidaNumerida);
+        case 4:ExibirMedia();
             break;
         case -1:
             Console.WriteLine("Tchau Tchau :) ");
@@ -132,7 +131,45 @@ void AvaliarUmaBanda()
     string nomeDaBanda = Console.ReadLine()!;
     if (bandasRegistradas.ContainsKey(nomeDaBanda)) //.ContainsKey
     {
+        Console.Write($"Qual a nota que a banda {nomeDaBanda} merece: ");
+        int nota = int.Parse(Console.ReadLine()!);
+        bandasRegistradas[nomeDaBanda].Add(nota);
+        Console.WriteLine($"\nA nota {nota} foi regitrada com sucesso para a banda {nomeDaBanda}");
+        Thread.Sleep(2000);
+        Console.Clear();
+        ExibirOpcoesDoMenu();
+    }
+    else
+    {
+        Console.WriteLine($"\nA banda {nomeDaBanda} não foi encontrada!");
+        Console.WriteLine("Digite uma tecla para voltar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesDoMenu();
+    }
+}
 
+void ExibirMedia()
+{
+    Console.Clear();
+    ExibirTituloDaOpcao("Exibir média da banda");
+    Console.Write("Digite o nome da banda que deseja exibir a média ");
+    string nomeDaBanda = Console.ReadLine()!;
+    if (bandasRegistradas.ContainsKey(nomeDaBanda)) //.ContainsKey
+    {
+        List<int> notasDaBanda = bandasRegistradas[nomeDaBanda];
+        Console.WriteLine($"\nA média das notas da banda {nomeDaBanda} é {notasDaBanda.Average()}.");
+        Console.WriteLine("Digite uma tecla para voltar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesDoMenu();
+        //Assim tbm funciona o calculo da média
+        // double media = bandasRegistradas[nomeDaBanda].Average();
+        //Console.WriteLine($"\nA média das notas da banda {nomeDaBanda} é {media} ")
+        //;
+        Thread.Sleep(2000);
+        Console.Clear();
+        ExibirOpcoesDoMenu();
     }
     else
     {
