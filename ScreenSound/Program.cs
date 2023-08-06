@@ -1,8 +1,14 @@
 ﻿// ScreenSound
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
+List<string> listaDasBandas = new List<string>()
+{
+    "U2",
+    "Pearl Jam",
+    "Nirvana",
+};
 
 
-void ExibirMensagemDeBoasVindas()
+void ExibirLogo()
 {
     Console.WriteLine(@"
     
@@ -41,11 +47,9 @@ void ExibirOpcoesDoMenu()
 
     switch (opcaoEscolhidaNumerida)
     {
-        case 1:
-            Console.WriteLine("Você digitou a opção " + opcaoEscolhidaNumerida);
+        case 1:RegistrarBanda();
             break;
-        case 2:
-            Console.WriteLine("Você digitou a opção " + opcaoEscolhidaNumerida);
+        case 2:MostrarBandasRegistradas();
             break;
         case 3:
             Console.WriteLine("Você digitou a opção " + opcaoEscolhidaNumerida);
@@ -62,7 +66,45 @@ void ExibirOpcoesDoMenu()
     }
 }
 
+void RegistrarBanda()
+{
+    Console.Clear();
+    Console.WriteLine("*******************");
+    Console.WriteLine("Registro de bandas");
+    Console.WriteLine("*******************\n");
+    Console.Write("Digite o nome da banda que deseja registrar: ");
+    string nomeDaBanda = Console.ReadLine()!;
+    listaDasBandas.Add(nomeDaBanda); //.Add Adiciona o nomeDaBanda na lista de string vazia
+    Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso");
+    Thread.Sleep(2000);
+    Console.Clear();
+    ExibirOpcoesDoMenu();
+}
+
+void MostrarBandasRegistradas()
+{
+    Console.Clear();
+    Console.WriteLine("************************************");
+    Console.WriteLine("Exibindo todas as bandas registradas");
+    Console.WriteLine("************************************\n");
+
+    //Utilizando FOR Exemplo
+    //for(int i = 0; i < listaDasBandas.Count; i++)
+    //{
+    //    Console.WriteLine($"Banda: {listaDasBandas[i]}");
+    //}
+
+    foreach (string banda in listaDasBandas)
+    {
+        Console.WriteLine($"Banda: {banda}");
+    }
+
+    Console.WriteLine("\nDigite uma tecla para voltar ao menu principal");
+    Console.ReadKey();
+    Console.Clear();
+    ExibirOpcoesDoMenu();
+}
 
 
-ExibirMensagemDeBoasVindas();
+ExibirLogo();
 ExibirOpcoesDoMenu();
