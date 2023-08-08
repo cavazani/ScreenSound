@@ -192,7 +192,8 @@ Musica musica1 = new Musica();
 musica1.nome = "Black";
 musica1.artista = "Pearl Jam";
 musica1.duracao = 273;
-musica1.disponivel = true;
+musica1.EscreveDisponivel(true);
+Console.WriteLine(musica1.LeDisponivel());
 
 //Chamando metodo da classe MUSICA
 musica1.ExibirFichaTecnica();
@@ -200,8 +201,9 @@ musica1.ExibirFichaTecnica();
 Musica musica2 = new Musica();
 musica2.nome = "One Of Us";
 musica2.artista = "Joan Osborne";
-musica1.duracao = 353;
-musica1.disponivel = false;
+musica2.duracao = 353;
+musica2.EscreveDisponivel(false);
+Console.WriteLine(musica2.LeDisponivel());
 
 musica2.ExibirFichaTecnica();
 
