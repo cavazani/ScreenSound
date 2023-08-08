@@ -189,21 +189,21 @@
 //Utilizando Orientação a Objetos
 
 Musica musica1 = new Musica();
-musica1.nome = "Black";
-musica1.artista = "Pearl Jam";
-musica1.duracao = 273;
-musica1.EscreveDisponivel(true);
-Console.WriteLine(musica1.LeDisponivel());
+musica1.Nome = "Black";
+musica1.Artista = "Pearl Jam";
+musica1.Duracao = 273;
+musica1.Disponivel = true;
+Console.WriteLine(musica1.Disponivel);
 
 //Chamando metodo da classe MUSICA
 musica1.ExibirFichaTecnica();
 
 Musica musica2 = new Musica();
-musica2.nome = "One Of Us";
-musica2.artista = "Joan Osborne";
-musica2.duracao = 353;
-musica2.EscreveDisponivel(false);
-Console.WriteLine(musica2.LeDisponivel());
+musica2.Nome = "One Of Us";
+musica2.Artista = "Joan Osborne";
+musica2.Duracao = 353;
+musica2.Disponivel = false;
+Console.WriteLine(musica2.Disponivel);
 
 musica2.ExibirFichaTecnica();
 
