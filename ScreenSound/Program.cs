@@ -191,14 +191,20 @@
 Musica musica1 = new Musica();
 musica1.nome = "Black";
 musica1.artista = "Pearl Jam";
+musica1.duracao = 273;
+musica1.disponivel = true;
 
-Console.WriteLine($"Nome da música: {musica1.nome}");
-Console.WriteLine($"Nome do artista: {musica1.artista}");
+//Chamando metodo da classe MUSICA
+musica1.ExibirFichaTecnica();
 
 Musica musica2 = new Musica();
 musica2.nome = "One Of Us";
 musica2.artista = "Joan Osborne";
+musica1.duracao = 353;
+musica1.disponivel = false;
 
+musica2.ExibirFichaTecnica();
 
-Console.WriteLine($"Nome da música: {musica2.nome}");
-Console.WriteLine($"Nome do artista: {musica2.artista}");
+//Exemplo com interpolação
+//Console.WriteLine($"Nome da música: {musica2.nome}");
+//Console.WriteLine($"Nome do artista: {musica2.artista}");
