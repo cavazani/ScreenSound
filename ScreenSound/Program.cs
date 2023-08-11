@@ -186,27 +186,47 @@
 
 
 
-//Utilizando Orientação a Objetos
+//****************Utilizando Orientação a Objetos****************************
 
-Musica musica1 = new Musica();
-musica1.Nome = "Black";
-musica1.Artista = "Pearl Jam";
-musica1.Duracao = 273;
-musica1.Disponivel = true;
-Console.WriteLine(musica1.Disponivel);
+//Musica musica1 = new Musica();
+//musica1.Nome = "Black";
+//musica1.Artista = "Pearl Jam";
+//musica1.Duracao = 273;
+//musica1.Disponivel = true;
+//Console.WriteLine(musica1.Disponivel);
 
-//Chamando metodo da classe MUSICA
-musica1.ExibirFichaTecnica();
+////Chamando metodo da classe MUSICA
+//musica1.ExibirFichaTecnica();
 
-Musica musica2 = new Musica();
-musica2.Nome = "One Of Us";
-musica2.Artista = "Joan Osborne";
-musica2.Duracao = 353;
-musica2.Disponivel = false;
-Console.WriteLine(musica2.Disponivel);
+//Musica musica2 = new Musica();
+//musica2.Nome = "One Of Us";
+//musica2.Artista = "Joan Osborne";
+//musica2.Duracao = 353;
+//musica2.Disponivel = false;
+//Console.WriteLine(musica2.Disponivel);
 
-musica2.ExibirFichaTecnica();
+//musica2.ExibirFichaTecnica();
 
 //Exemplo com interpolação
 //Console.WriteLine($"Nome da música: {musica2.nome}");
 //Console.WriteLine($"Nome do artista: {musica2.artista}");
+
+
+//*****Utilizando Class Album***
+
+Album albumDoQueen = new Album();
+albumDoQueen.Nome = "A night at the opera";
+
+Musica musica1 = new Musica();
+musica1.Nome = "Love of my life";
+musica1.Duracao = 213;
+
+
+Musica musica2 = new Musica();
+musica2.Nome = "Bohemian Rhapsody";
+musica2.Duracao = 315;
+
+albumDoQueen.AdicionarMusica(musica1);
+albumDoQueen.AdicionarMusica(musica2);
+
+albumDoQueen.ExibirMusicasDoAlbum();
