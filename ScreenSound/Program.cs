@@ -214,6 +214,8 @@
 
 //*****Utilizando Class Album***
 
+using ScreenSound;
+
 Banda queen = new Banda("Queen");
 
 Album albumDoQueen = new Album("A night at the opera");
@@ -231,6 +233,12 @@ Musica musica2 = new Musica(queen, "Bohemian Rhapsody")
     Duracao = 354,
     Disponivel = false
 };
+
+Console.WriteLine("##################################################");
+Episodio ep1 = new(1, "Tecnicas de facilitação", 45);
+ep1.AdicionarConvidados("Maria");
+ep1.AdicionarConvidados("Marcelo");
+Console.WriteLine(ep1.Resumo);
 
 
 albumDoQueen.AdicionarMusica(musica1);
