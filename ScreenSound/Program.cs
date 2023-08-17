@@ -235,10 +235,25 @@ Musica musica2 = new Musica(queen, "Bohemian Rhapsody")
 };
 
 Console.WriteLine("##################################################");
+Console.WriteLine("                                                   ");
 Episodio ep1 = new(1, "Tecnicas de facilitação", 45);
 ep1.AdicionarConvidados("Maria");
 ep1.AdicionarConvidados("Marcelo");
 Console.WriteLine(ep1.Resumo);
+
+Episodio ep2 = new(2, "Falando sobre programção", 355);
+ep2.AdicionarConvidados("Gabriel");
+ep2.AdicionarConvidados("Henrique");
+ep2.AdicionarConvidados("Flavia");
+Console.WriteLine(ep1.Resumo);
+
+Podcast podcast = new("Podcast especial","Daniel");
+podcast.AdicionarEpisodio(ep1);
+podcast.AdicionarEpisodio(ep2);
+podcast.ExibirDetalhes();
+
+Console.WriteLine("##################################################");
+Console.WriteLine("                                                   ");
 
 
 albumDoQueen.AdicionarMusica(musica1);
