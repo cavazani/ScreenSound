@@ -118,6 +118,22 @@ void MostrarBandasRegistradas() {
     ExibirOpcoesDoMenu();
 }
 
+
+void RegistrarAlbum() 
+{
+    Console.Clear();
+    ExibirTituloDaOpcao("Registro de bandas");
+    Console.Write("Digite o nome da banda que deseja registrar: ");
+    string nomeDaBanda = Console.ReadLine();
+    Console.Write("Agora digite o titulo do album: ");
+    string tituloAlbum = Console.ReadLine();
+
+    Console.WriteLine($"O Album {tituloAlbum} de {nomeDaBanda} foi registrado com sucesso!");
+    Thread.Sleep(2000);
+    Console.Clear();
+    ExibirOpcoesDoMenu();
+}
+
 void ExibirTituloDaOpcao(string titulo) {
     int quantidadeDeLetras = titulo.Length;
     string asteriscos = string.Empty.PadLeft(quantidadeDeLetras, '*');
