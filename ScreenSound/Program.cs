@@ -11,11 +11,12 @@ string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
 //    "Nirvana",
 //};
 
-Banda ira = new Banda("Ira!");
+Banda ira = new Banda("Ira");
 Banda beatles = new Banda("The Beatles");
 
-//ira.AdicionarNota(10);
-
+ira.AdicionarNota(new Avaliacao(10));
+ira.AdicionarNota(new Avaliacao(8));
+ira.AdicionarNota(new Avaliacao(6));
 
 Dictionary<string, Banda> bandasRegistradas = new();
 bandasRegistradas.Add(ira.Nome, ira);
@@ -166,7 +167,7 @@ void AvaliarUmaBanda() {
         Banda banda = bandasRegistradas[nomeDaBanda];
         Console.Write($"Qual a nota que a banda {nomeDaBanda} merece: ");
         int nota = int.Parse(Console.ReadLine()!);
-        banda.AdicionarNota(nota);
+        banda.AdicionarNota(new Avaliacao(5));
         //bandasRegistradas[nomeDaBanda].Add(nota);
         Console.WriteLine($"\nA nota {nota} foi regitrada com sucesso para a banda {nomeDaBanda}");
         Thread.Sleep(2000);
